@@ -9,27 +9,27 @@
 | 平台 | 下载文件 | 大小（MiB） | 精确字节数 |
 | --- | --- | ---: | ---: |
 | Linux | [efinity_package_linux.zip](https://github.com/Digital-EDA/digital-ide-efinity/releases/download/20261117_151317/efinity_package_linux.zip) | 310.9 | 325976785 |
-| Windows | [efinity_package_win.zip](https://github.com/Digital-EDA/digital-ide-efinity/releases/download/20261117_151317/efinity_package_win.zip) | 321.0 | 336639774 |
+| Windows | [efinity_package_win.zip](https://github.com/Digital-EDA/digital-ide-efinity/releases/download/20261117_151317/efinity_package_win.zip) | 321.4 | 336961051 |
 
 [下载 SHA256SUMS.txt](https://github.com/Digital-EDA/digital-ide-efinity/releases/download/20261117_151317/SHA256SUMS.txt)。GitHub 自动生成的 **Source code (zip/tar.gz)** 只包含仓库内容，不包含 Efinity package。
 
 ## 解压与使用
 
 1. 下载对应操作系统的 ZIP，并按下方 SHA-256 校验完整性。
-2. **Linux**：压缩包顶层为 `package/`；将解压后的 `package` 目录配置为 Efinity package 路径。
-3. **Windows**：压缩包顶层直接包含 `bin/`、`lib/`、`arch/`、`res/`，没有外层 `package/`。请先创建独立目标目录（例如 `D:\APP\Efinity\package\package`），将 ZIP 内容解压到该目录，并将该目录配置为 Efinity package 路径。
-4. 保留目录结构，将两个平台的包解压到独立位置；不要混合平台文件。package 根目录应直接包含 `bin/`、`lib/`、`arch/` 和 `res/`。
+2. 两个平台的压缩包顶层均为 `package/`。解压并保留目录结构，将解压后的 `package` 目录配置为 Efinity package 路径。
+3. 配置的 package 根目录应直接包含 `bin/`、`lib/`、`arch/` 和 `res/`。例如：`D:\APP\Efinity\package\package`。
+4. 将两个平台的包解压到独立位置，不要混合平台文件。
 5. 在 Digital IDE 设置 `digital-ide.prj.efinix.package.path`；独立命令/MCP 也可通过 `DIGITAL_IDE_EFINIX_PACKAGE` 指定同一目录。
 
 两个更新包的 XSD 均位于 `res/schema`，包括 `lpf.xsd`、`peri_util.xsd`、`enf_proj.xsd` 和 `p.xsd`。
 
-本次发布验证了这两个原始 ZIP 的全部条目 CRC 完整性、目录层级和 SHA-256；不据此承诺所有器件或板卡的运行兼容性。仓库不重新授予包内第三方软件许可；使用和分发应遵守相应权利人的条款。
+Windows 包已统一增加顶层 `package/`，逐条目核对文件大小和 CRC，包内文件内容保持不变。本次发布验证了两个最终 ZIP 的全部条目 CRC 完整性、目录层级和 SHA-256；不据此承诺所有器件或板卡的运行兼容性。仓库不重新授予包内第三方软件许可；使用和分发应遵守相应权利人的条款。
 
 ## SHA-256
 
 ```text
 3c245bb8599df11e980ad86b42ddf4059dc27e94ff53e741c68b37cfddf5aba1  efinity_package_linux.zip
-5fdc9a664d310e4eb80bbefb5046ffa9e580df9dd9eade14ec9b15b817508426  efinity_package_win.zip
+db5c049cd1b92b30ac584f9c8c5fd275430e6245ce75b36e073d229d41393351  efinity_package_win.zip
 ```
 
 Windows PowerShell：
